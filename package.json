@@ -12,6 +12,7 @@
   "author": "Muhamad Ade Rohayat",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.17.1",
     "superheroes": "^3.0.0"
   }
 }

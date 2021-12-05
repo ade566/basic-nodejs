@@ -1,8 +1,18 @@
-const hero = require('superheroes')
+const express = require('express')
 const say = require('./module/say')
-
-const nameHero = hero.random()
-console.log(nameHero)
+const app = express()
+const port = 3000
 
 const sayHello = say.hello('Muhamad Ade Rohayat')
-console.log(sayHello)
+
+app.get('/', (req, res) => {
+  res.send(sayHello)
+})
+
+app.get('/user/:name', (req, res) => {
+  res.send(say.hello(req.params.name))
+})
+
+app.listen(port, () => {
+  console.log(`Server run at http://localhost:${port}`)
+})
