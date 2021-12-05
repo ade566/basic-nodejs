@@ -5,8 +5,11 @@ const port = 3000
 
 const sayHello = say.hello('Muhamad Ade Rohayat')
 
+app.set('views', './views')
+app.set('view engine', 'ejs')
+
 app.get('/', (req, res) => {
-  res.send(sayHello)
+  res.render('index')
 })
 
 app.get('/user/:name', (req, res) => {
